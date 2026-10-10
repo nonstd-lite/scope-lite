@@ -29,13 +29,11 @@
 
 // tweak header support:
 
-#ifdef __has_include
-# if __has_include(<nonstd/scope.tweak.hpp>)
-#  include <nonstd/scope.tweak.hpp>
-# endif
-#define scope_HAVE_TWEAK_HEADER  1
+#if defined(__has_include) && __has_include(<nonstd/scope.tweak.hpp>)
+# include <nonstd/scope.tweak.hpp>
+# define scope_HAVE_TWEAK_HEADER  1
 #else
-#define scope_HAVE_TWEAK_HEADER  0
+# define scope_HAVE_TWEAK_HEADER  0
 //# pragma message("scope.hpp: Note: Tweak header not supported.")
 #endif
 
